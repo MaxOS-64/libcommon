@@ -15,6 +15,8 @@ namespace MaxOS{
 		#define PACKED __attribute__((packed))
 	#endif
 
+    #define NOT_IMPLEMENTED ASSERT(false, "function not implemented")
+
 	#ifdef DOXYGEN
 		/// Align to page size (4096 bytes)
 		#define PAGE_ALIGNED
