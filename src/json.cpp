@@ -91,12 +91,12 @@ JSONNode &JSONNode::operator[](string key) {
 string JSONNode::to_string(int level) {
 
 	// Get the indent at two spaces per level
-	string indent = "  "s * level;
+	string indent = "  "_s* level;
 
 	switch (m_type) {
 
 		case STRING:
-			return "\""s + *(string*)m_value + "\"";
+			return "\""_s+ *(string*)m_value + "\"";
 
 		case NUMBER:
 			return string((int)(uint64_t)m_value);
@@ -190,7 +190,7 @@ string JSONObject::to_string(int level) {
 		return "{}";
 
 	// Get the indent at two spaces per level
-	string indent = "  "s * level;
+	string indent = "  "_s* level;
 
 	// Add each keypair to the output
 	string out = "{";
