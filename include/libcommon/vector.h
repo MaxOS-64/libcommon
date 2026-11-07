@@ -90,7 +90,7 @@ namespace MaxOS::common {
 	template<class Type> Vector<Type>::Vector() {
 
 		// Allocate space for the array
-		m_elements = new Type[m_capacity];
+		m_elements = (Type*)(new uint8_t[m_capacity]);
 
 	}
 
@@ -104,7 +104,7 @@ namespace MaxOS::common {
 	template<class Type> Vector<Type>::Vector(int size, Type element) {
 
 		// Allocate space for the array
-		m_elements = new Type[size];
+		m_elements = (Type*)(new uint8_t[size]);
 		m_capacity = size > 0 ? size : 1;
 		m_size = 0;
 
